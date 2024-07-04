@@ -114,7 +114,7 @@ function validate(event) {
     }
 
     // If all validations pass
-    form.style.display = "none";
+    modalbg.style.display = "none";
     confirmationModal.style.display = "block";
   } catch (error) {
     isValid = false;
