@@ -86,6 +86,14 @@ function validate(event) {
         message: "Veuillez entrer une date de naissance valide (YYYY-MM-DD).",
       };
     }
+    const birthdateDate= new Date(birthdate);
+    const today = new Date();
+    if (birthdateDate>today){
+      throw{
+        field:form.birthdate,
+        message:"La date de naissance ne peut pas être dans le futur.",
+      };
+    }
 
     // Validate quantity
     const quantity = form.quantity.value.trim();
