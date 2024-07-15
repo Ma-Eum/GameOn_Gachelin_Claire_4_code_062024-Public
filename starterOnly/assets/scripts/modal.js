@@ -51,6 +51,8 @@ function validate(event) {
     data.setAttribute("data-error-visible", "false");
   });
 
+  document.getElementById("locationError").style.display="none";
+
     // Validate first name
     const firstName = form.first.value.trim();
     if (!/^[a-zA-Z]{2,}$/.test(firstName)) {
@@ -106,12 +108,9 @@ function validate(event) {
     }
 
     // Validate location
-    const location = form.location.value;
-    if (!location) {
-      errors.push({
-        field: form.location,
-        message: "Veuillez sélectionner un lieu.",
-      });
+    const locationSelected=document.querySelector('input[name="location"]:checked');
+    if(!locationSelected){
+      errors.push({field:document.getElementById("formError"), message: "Veuillez sélectionner un lieu." });
     }
 
     // Validate terms of use
@@ -128,8 +127,10 @@ function validate(event) {
         isValid=false;
         errors.forEach((error) =>{
           const fieldContainer=error.field.closest(".formData");
+          if(fieldContainer){
           fieldContainer.setAttribute("data-error",error.message);
           fieldContainer.setAttribute("data-error-visible","true");
+          }
         });
       }else{
         //If all validations pass
