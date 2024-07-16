@@ -537,22 +537,30 @@ footer {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .confirmation-content{
-  background-color: #fff;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  margin: 5% auto;
+  width: 100%;
   max-width: 500px;
-  text-align: center;
+  max-height: 920px;
   border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  height: 715px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 300px;
 }
 
 .confirmation-content p{
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .confirmation-content button{
@@ -562,11 +570,40 @@ footer {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 .confirmation-content button:hover{
-  background-color: #3876ac;
+  background-color: #d12b36;
+}
+
+.confirmation-content .close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+
+.confirmation-content .close:before, .confirmation-content .close:after{
+  position: absolute;
+  left: 15px;
+  content: "";
+  height: 33px;
+  width: 3px;
+  background-color: white;
+}
+
+.confirmation-content .close:before{
+  transform: rotate(45deg);
+}
+
+.confirmation-content .close:after{
+  transform: rotate(-45deg);
 }
 
 /* Responsive styles */

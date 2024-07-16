@@ -10,7 +10,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const closeModal = document.querySelector(".close");
+const closeModal = document.querySelectorAll(".close");
 const form = document.forms["reserve"];
 const confirmationModal = document.getElementById("confirmation-modal");
 const closeConfirmation = document.getElementById("close-confirmation");
@@ -24,10 +24,11 @@ function launchModal() {
 }
 
 // Close modal form
-closeModal.addEventListener("click", closeFormModal);
+closeModal.forEach((btn)=>btn.addEventListener("click", closeAllModals));
 
-function closeFormModal() {
+function closeAllModals() {
   modalbg.style.display = "none";
+  confirmationModal.style.display="none";
 }
 
 // Close confirmation modal
