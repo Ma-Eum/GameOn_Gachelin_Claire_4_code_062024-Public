@@ -1,0 +1,5 @@
+Projet 4 : Créez une landing page avec Javascript
+
+Voici le lien vers mon reposite GitHub contenant la base de code complète pour l'application.
+
+https://github.com/Ma-Eum/GameOn_Gachelin_Claire_4_code_062024-Public.git
